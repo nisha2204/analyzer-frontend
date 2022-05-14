@@ -15,7 +15,7 @@ const Register = () => {
     const Register = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('https://listing-quality-analysis.herokuapp.com/users', {
+            await axios.post('http://localhost:5000/users', {
                 name: name,
                 email: email,
             });
