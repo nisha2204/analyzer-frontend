@@ -23,7 +23,7 @@ const handleSubmit = async (e) => {
     setLoading(true);
   }
   try {
-    await axios.post('http://localhost:5000/addasin', {
+    await axios.post('https://listanalyzer.herokuapp.com/addasin', {
         asin: asin
     });
     console.log(typeof(asin))
