@@ -13,21 +13,8 @@ const Analyze = () => {
   const [country, setCountry] = useState('');
   const [asin, setAsin] = useState('');
   const [msg, setMsg] = useState('');
- const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-//  const addasin = async (e) => {
-//   e.preventDefault();
-//   try {
-//       await axios.post('http://localhost:5000/addasin', {
-//           asin: asin,
-//       });
-//       //navigate("/dashboard");
-//   } catch (error) {
-//       if (error.response) {
-//           setMsg(error.response.data.msg);
-//       }
-//   }
-// }
 
 const handleSubmit = async (e) => {
   e.preventDefault();
@@ -36,7 +23,7 @@ const handleSubmit = async (e) => {
     setLoading(true);
   }
   try {
-    await axios.post('http://localhost:5000/addasin', {
+    await axios.post('https://listanalyzer.herokuapp.com/addasin', {
         asin: asin
     });
     console.log(typeof(asin))
