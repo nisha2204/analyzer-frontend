@@ -13,8 +13,21 @@ const Analyze = () => {
   const [country, setCountry] = useState('');
   const [asin, setAsin] = useState('');
   const [msg, setMsg] = useState('');
-  const [loading, setLoading] = useState(false);
+ const [loading, setLoading] = useState(false);
 
+//  const addasin = async (e) => {
+//   e.preventDefault();
+//   try {
+//       await axios.post('http://localhost:5000/addasin', {
+//           asin: asin,
+//       });
+//       //navigate("/dashboard");
+//   } catch (error) {
+//       if (error.response) {
+//           setMsg(error.response.data.msg);
+//       }
+//   }
+// }
 
 const handleSubmit = async (e) => {
   e.preventDefault();
@@ -23,7 +36,7 @@ const handleSubmit = async (e) => {
     setLoading(true);
   }
   try {
-    await axios.post('https://listanalyzer.herokuapp.com/addasin', {
+    await axios.post('http://localhost:5000/addasin', {
         asin: asin
     });
     console.log(typeof(asin))
@@ -44,7 +57,6 @@ const handleSubmit = async (e) => {
       <div className="title">
         <h1>Analyze product listings with Listing Analyzer</h1>
         <p>Research up to 10 Amazon product listings to see the quality of your and your competitors’ listings.</p>
-        <p>{msg}</p>
       </div>
       <div className="option-container">
       <label id="type">Choose a country</label>
