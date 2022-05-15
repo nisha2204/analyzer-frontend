@@ -9,7 +9,7 @@ const Navbar = () => {
     const navigate = useNavigate();
     const Logout = async () => {
         try {
-            await axios.delete('https://listanalyzer.herokuapp.com/logout');
+            await axios.delete('http://localhost:5000/logout');
             navigate("/");
         } catch (error) {
             console.log(error);

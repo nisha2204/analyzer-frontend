@@ -13,7 +13,7 @@ const Login = () => {
     const Auth = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('https://listanalyzer.herokuapp.com/login', {
+            await axios.post('http://localhost:5000/login', {
                 email: email,
             });
             navigate("/analyzer");
