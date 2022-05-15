@@ -15,7 +15,7 @@ const Login = () => {
         try {
             await axios.post('http://localhost:5000/login', {
                 email: email,
-            });
+            }, {withCredentials:true});
             navigate("/analyzer");
         } catch (error) {
             if (error.response) {

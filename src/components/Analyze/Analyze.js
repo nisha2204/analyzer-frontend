@@ -38,12 +38,13 @@ const handleSubmit = async (e) => {
   try {
     await axios.post('http://localhost:5000/addasin', {
         asin: asin
-    });
+    }, {withCredentials:true});
     console.log(typeof(asin))
     //navigate("/dashboard");
 } catch (error) {
     if (error.response) {
         setMsg(error.response.data.msg);
+        console.log(error.response.data.msg);
     }
 }
 }

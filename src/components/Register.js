@@ -18,7 +18,7 @@ const Register = () => {
             await axios.post('http://localhost:5000/register', {
                 name: name,
                 email: email,
-            });
+            }, {withCredentials:true});
             navigate("/");
         } catch (error) {
             if (error.response) {
