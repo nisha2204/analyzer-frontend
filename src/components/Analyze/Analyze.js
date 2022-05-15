@@ -44,6 +44,7 @@ const handleSubmit = async (e) => {
       <div className="title">
         <h1>Analyze product listings with Listing Analyzer</h1>
         <p>Research up to 10 Amazon product listings to see the quality of your and your competitors’ listings.</p>
+        <p>{msg}</p>
       </div>
       <div className="option-container">
       <label id="type">Choose a country</label>
