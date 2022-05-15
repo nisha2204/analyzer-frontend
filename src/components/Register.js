@@ -15,7 +15,7 @@ const Register = () => {
     const Register = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/users', {
+            await axios.post('https://listanalyzer.herokuapp.com/users', {
                 name: name,
                 email: email,
             });
