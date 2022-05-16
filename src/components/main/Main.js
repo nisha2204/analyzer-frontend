@@ -16,7 +16,9 @@ function Main({country,asin}){
 
 
 useEffect(() => {
-      setData( getData(asin,country));
+  async()=>{
+    setData( await getData(asin,country));
+  }
 },[]);
 
 const setImageSize = (setImageDimensions, imageUrl) => {
