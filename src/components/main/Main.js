@@ -98,10 +98,10 @@ const calculatescore=()=>{
   if(x>20){
     score++;
   }
-  if(data?.images?.length > 7){
+  if(data?.total_images >= 7){
     score++;
   }
-  if(data?.videos?.length >0){
+  if(data?.videos?.length >=0){
     score++;
   }
   if(data?.reviews?.total_reviews > 20){
@@ -204,7 +204,7 @@ console.log(data,"ehll");
                 <hr/> */}
                 <div className="text">
                 <p>7+ images</p>
-                { data?.images?.length > 7 ?  <img src={tick} alt={cross}/> : <img src={cross} alt={cross}/>}
+                { data?.total_images >= 7 ?  <img src={tick} alt={cross}/> : <img src={cross} alt={cross}/>}
                 
                
                 </div>
