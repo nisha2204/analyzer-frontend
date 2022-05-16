@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './login.css'
+import { refreshToken } from '../../../server/controllers/RefreshToken';
 //import "bulma/css/bulma.css";
  
 const Login = () => {
@@ -13,9 +14,10 @@ const Login = () => {
     const Auth = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/login', {
+            const res=await axios.post('https://listinganalyzer.herokuapp.com/login', {
                 email: email,
             }, {withCredentials:true});
+            setCookie('token', res.refreshToken, {path: '/'})
             navigate("/analyzer");
         } catch (error) {
             if (error.response) {
