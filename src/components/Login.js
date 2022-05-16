@@ -13,10 +13,9 @@ const Login = () => {
     const Auth = async (e) => {
         e.preventDefault();
         try {
-            const res=await axios.post('https://listinganalyzer.herokuapp.com/login', {
+            await axios.post('https://listinganalyzer.herokuapp.com/login', {
                 email: email,
             }, {withCredentials:true});
-            setCookie('token', res.refreshToken, {path: '/'})
             navigate("/analyzer");
         } catch (error) {
             if (error.response) {
